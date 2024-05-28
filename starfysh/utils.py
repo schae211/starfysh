@@ -13,7 +13,6 @@ from scipy.stats import median_abs_deviation
 from torch.utils.data import DataLoader
 
 import sys
-import histomicstk as htk
 from skimage import io
 
 # Module import
@@ -687,6 +686,7 @@ def preprocess_img(
     """
     if os.path.isfile(os.path.join(data_path, sample_id, 'spatial', 'tissue_hires_image.png')):
         if hchannel:
+            import histomicstk as htk
             adata_image = io.imread(
                 os.path.join(
                     data_path, sample_id, 'spatial', 'tissue_hires_image.png'
